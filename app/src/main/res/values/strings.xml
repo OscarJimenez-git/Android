@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="nuevo_usuario">Agregar Nuevo Usuario</string>
+    <string name="nombre_usuario">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="telefono">Telefono</string>
+    <string name="fecha">fecha\n</string>
+    <string name="genero">Genero</string>
+    <string name="masculino">M</string>
+    <string name="femenino">F</string>
+    <string name="otro">Otro</string>
+    <string name="comentarios">Comentarios</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="anterior">Anterior</string>
+    <string name="terminos_checkbox">Acepta términos y condiciones</string>
+    <string name="guardar">Guardar</string>
+    <string name="borrar">Borrar</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="limpiar">Limpiar</string>
+</resources>

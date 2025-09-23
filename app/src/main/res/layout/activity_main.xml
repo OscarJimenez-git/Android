@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/nuevo_usuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nombreField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombre_usuario"
+        android:minWidth="@dimen/text_input_min_width"
+        android:layout_marginStart="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/apellidoField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/apellido"
+        android:minWidth="@dimen/text_input_min_width"
+        app:layout_constraintStart_toStartOf="@+id/nombreField"
+        app:layout_constraintTop_toBottomOf="@+id/nombreField">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TelefonoField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/telefono"
+        android:layout_marginStart="32dp"
+
+        android:minWidth="@dimen/text_input_min_width"
+        app:layout_constraintStart_toEndOf="@+id/nombreField"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fechaField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/fecha"
+        android:minWidth="@dimen/text_input_min_width"
+        app:layout_constraintStart_toStartOf="@+id/TelefonoField"
+        app:layout_constraintTop_toBottomOf="@+id/TelefonoField">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dateEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/generoLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:text="@string/genero"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apellidoField" />
+
+    <RadioGroup
+        android:id="@+id/generoGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/generoLabel"
+        app:layout_constraintTop_toBottomOf="@+id/generoLabel">
+
+        <RadioButton
+            android:id="@+id/radio_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/masculino" />
+
+        <RadioButton
+            android:id="@+id/radio_f"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/femenino" />
+
+        <RadioButton
+            android:id="@+id/radio_otro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/otro" />
+    </RadioGroup>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/comentariosField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/comentarios"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:minWidth="@dimen/text_input_min_width"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/generoGroup"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:minLines="3"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/siguienteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/siguiente"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/comentariosField"
+        app:layout_constraintTop_toBottomOf="@+id/comentariosField" />
+
+    <Button
+        android:id="@+id/anteriorButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/anterior"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="@+id/comentariosField"
+        app:layout_constraintTop_toBottomOf="@+id/comentariosField" />
+
+    <Button
+        android:id="@+id/limpiarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/limpiar"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/actualizarButton" />
+
+    <Button
+        android:id="@+id/actualizarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/actualizar"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/limpiarButton"
+        app:layout_constraintEnd_toStartOf="@+id/borrarButton" />
+
+    <Button
+        android:id="@+id/borrarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/borrar"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/actualizarButton"
+        app:layout_constraintEnd_toStartOf="@+id/guardarButton" />
+
+    <Button
+        android:id="@+id/guardarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/guardar"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/borrarButton"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <CheckBox
+        android:id="@+id/aceptaCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/terminos_checkbox"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/anteriorButton" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
