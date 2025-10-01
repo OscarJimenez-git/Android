@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <!-- Fila 1: Nombre y Apellido -->
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nombreField"
         android:layout_width="0dp"
@@ -54,7 +54,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Fila 2: Teléfono y Fecha -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TelefonoField"
         android:layout_width="0dp"
