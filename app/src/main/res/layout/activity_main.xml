@@ -11,36 +11,42 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/margin_medio"
         android:text="@string/nuevo_usuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <!-- Fila 1: Nombre y Apellido -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nombreField"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/nombre_usuario"
-        android:minWidth="@dimen/text_input_min_width"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="@dimen/margin_medio"
+        android:layout_marginEnd="@dimen/margin_pequeno"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintEnd_toStartOf="@+id/apellidoField"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintHorizontal_chainStyle="packed">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/apellidoField"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_pequeno"
+        android:layout_marginEnd="@dimen/margin_medio"
         android:hint="@string/apellido"
-        android:minWidth="@dimen/text_input_min_width"
-        app:layout_constraintStart_toStartOf="@+id/nombreField"
-        app:layout_constraintTop_toBottomOf="@+id/nombreField">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nombreField"
+        app:layout_constraintTop_toTopOf="@+id/nombreField">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -48,16 +54,18 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Fila 2: Teléfono y Fecha -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TelefonoField"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/telefono"
-        android:layout_marginStart="32dp"
-
-        android:minWidth="@dimen/text_input_min_width"
-        app:layout_constraintStart_toEndOf="@+id/nombreField"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        android:layout_marginStart="@dimen/margin_medio"
+        android:layout_marginEnd="@dimen/margin_pequeno"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fechaField"
+        app:layout_constraintTop_toBottomOf="@+id/nombreField"
+        app:layout_constraintHorizontal_chainStyle="packed">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -68,12 +76,15 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/fechaField"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_pequeno"
+        android:layout_marginEnd="@dimen/margin_medio"
         android:hint="@string/fecha"
-        android:minWidth="@dimen/text_input_min_width"
-        app:layout_constraintStart_toStartOf="@+id/TelefonoField"
-        app:layout_constraintTop_toBottomOf="@+id/TelefonoField">
+        app:layout_constraintBottom_toBottomOf="@+id/TelefonoField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TelefonoField"
+        app:layout_constraintTop_toBottomOf="@+id/apellidoField">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/dateEditText"
@@ -85,11 +96,11 @@
         android:id="@+id/generoLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="@dimen/margin_medio"
+        android:layout_marginTop="@dimen/margin_medio"
         android:text="@string/genero"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apellidoField" />
+        app:layout_constraintTop_toBottomOf="@+id/TelefonoField" />
 
     <RadioGroup
         android:id="@+id/generoGroup"
@@ -117,18 +128,28 @@
             android:layout_height="wrap_content"
             android:text="@string/otro" />
     </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/aceptaCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/terminos_checkbox"
+        android:layout_marginStart="@dimen/margin_medio"
+        app:layout_constraintStart_toEndOf="@+id/generoGroup"
+        app:layout_constraintTop_toTopOf="@+id/generoGroup"
+        app:layout_constraintBottom_toBottomOf="@+id/generoGroup" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/comentariosField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/comentarios"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:minWidth="@dimen/text_input_min_width"
+        android:layout_marginStart="@dimen/margin_medio"
+        android:layout_marginEnd="@dimen/margin_medio"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/generoGroup"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="@dimen/margin_grande">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -142,16 +163,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/siguiente"
-        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="@+id/comentariosField"
-        app:layout_constraintTop_toBottomOf="@+id/comentariosField" />
+        app:layout_constraintTop_toTopOf="@+id/anteriorButton" />
 
     <Button
         android:id="@+id/anteriorButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/anterior"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="@dimen/margin_boton_top"
         app:layout_constraintStart_toStartOf="@+id/comentariosField"
         app:layout_constraintTop_toBottomOf="@+id/comentariosField" />
 
@@ -160,50 +180,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/limpiar"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/actualizarButton" />
+        android:layout_marginBottom="@dimen/margin_medio"
+        app:layout_constraintBottom_toTopOf="@+id/borrarButton"
+        app:layout_constraintStart_toStartOf="@+id/borrarButton" />
 
     <Button
         android:id="@+id/actualizarButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/actualizar"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/limpiarButton"
-        app:layout_constraintEnd_toStartOf="@+id/borrarButton" />
+        android:layout_marginBottom="@dimen/margin_medio"
+        app:layout_constraintBottom_toTopOf="@+id/guardarButton"
+        app:layout_constraintEnd_toEndOf="@+id/guardarButton" />
 
     <Button
         android:id="@+id/borrarButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/borrar"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="@dimen/margin_medio"
+        android:layout_marginStart="@dimen/margin_medio"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/actualizarButton"
-        app:layout_constraintEnd_toStartOf="@+id/guardarButton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/guardarButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/guardar"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="@dimen/margin_medio"
+        android:layout_marginEnd="@dimen/margin_medio"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/borrarButton"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <CheckBox
-        android:id="@+id/aceptaCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/terminos_checkbox"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/anteriorButton" />
 
 
 

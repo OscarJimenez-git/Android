@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_input_min_width">150dp</dimen>
+    <dimen name="margin_medio">32dp</dimen>
+    <dimen name="margin_pequeno">8dp</dimen>
+    <dimen name="margin_grande">16dp</dimen>
+    <dimen name="margin_boton_top">15dp</dimen>
 </resources>
+
