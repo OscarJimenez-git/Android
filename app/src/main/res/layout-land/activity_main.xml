@@ -96,7 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_medio"
-        android:layout_marginTop="@dimen/margin_medio"
+        android:layout_marginTop="@dimen/margin_pequeno"
         android:text="@string/genero"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TelefonoField" />
@@ -148,7 +148,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/generoGroup"
-        android:layout_marginTop="@dimen/margin_grande">
+        android:layout_marginTop="@dimen/margin_pequeno"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -159,65 +160,62 @@
 
     <Button
         android:id="@+id/siguienteButton"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/siguiente"
         app:layout_constraintEnd_toEndOf="@+id/comentariosField"
-        app:layout_constraintTop_toTopOf="@+id/anteriorButton"
-        style="?attr/materialButtonOutlinedStyle"
-        />
+        app:layout_constraintTop_toTopOf="@+id/aceptaCheckBox" />
 
     <Button
         android:id="@+id/anteriorButton"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/anterior"
-        android:layout_marginTop="@dimen/margin_boton_top"
-        app:layout_constraintStart_toStartOf="@+id/comentariosField"
-        app:layout_constraintTop_toBottomOf="@+id/comentariosField"
-        style="?attr/materialButtonOutlinedStyle"/>
+        app:layout_constraintEnd_toStartOf="@+id/siguienteButton"
+        app:layout_constraintStart_toEndOf="@+id/aceptaCheckBox"
+        app:layout_constraintTop_toTopOf="@+id/aceptaCheckBox" />
 
     <Button
         android:id="@+id/limpiarButton"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/limpiar"
-        android:layout_marginBottom="@dimen/margin_medio"
-        app:layout_constraintBottom_toTopOf="@+id/borrarButton"
-        app:layout_constraintStart_toStartOf="@+id/borrarButton"
-        style="?attr/materialButtonOutlinedStyle"/>
+        android:layout_marginStart="@dimen/margin_medio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/borrarButton" />
 
     <Button
         android:id="@+id/actualizarButton"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/actualizar"
-        android:layout_marginBottom="@dimen/margin_medio"
-        app:layout_constraintBottom_toTopOf="@+id/guardarButton"
-        app:layout_constraintEnd_toEndOf="@+id/guardarButton"
-        style="?attr/materialButtonOutlinedStyle"/>
+        android:layout_marginEnd="@dimen/margin_medio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guardarButton" />
 
     <Button
         android:id="@+id/borrarButton"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/borrar"
-        android:layout_marginBottom="@dimen/margin_medio"
         android:layout_marginStart="@dimen/margin_medio"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        style="?attr/materialButtonOutlinedStyle"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/guardarButton"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/guardar"
-        android:layout_marginBottom="@dimen/margin_medio"
         android:layout_marginEnd="@dimen/margin_medio"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        style="?attr/materialButtonOutlinedStyle"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 
