@@ -8,11 +8,11 @@
     tools:context=".ui.pantallamain.MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/nuevo_videojuego"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medio"
-        android:text="@string/nuevo_usuario"
+        android:layout_marginTop="@dimen/margin_pequeno"
+        android:text="@string/nuevo_juego"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,12 +23,12 @@
         android:id="@+id/nombreField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/nombre_usuario"
+        android:hint="@string/nombre_videojuego"
         android:layout_marginStart="@dimen/margin_medio"
         android:layout_marginEnd="@dimen/margin_pequeno"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/apellidoField"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/DesarrolladorField"
+        app:layout_constraintTop_toBottomOf="@+id/nuevo_videojuego"
         app:layout_constraintHorizontal_chainStyle="packed">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -38,12 +38,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/apellidoField"
+        android:id="@+id/DesarrolladorField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_pequeno"
         android:layout_marginEnd="@dimen/margin_medio"
-        android:hint="@string/apellido"
+        android:hint="@string/Desarrollador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/nombreField"
         app:layout_constraintTop_toTopOf="@+id/nombreField">
@@ -55,35 +55,35 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TelefonoField"
+        android:id="@+id/GeneroField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/telefono"
+        android:hint="@string/Genero"
         android:layout_marginStart="@dimen/margin_medio"
         android:layout_marginEnd="@dimen/margin_pequeno"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/fechaField"
+        app:layout_constraintEnd_toStartOf="@+id/LanzamientoField"
         app:layout_constraintTop_toBottomOf="@+id/nombreField"
         app:layout_constraintHorizontal_chainStyle="packed">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"/>
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/fechaField"
+        android:id="@+id/LanzamientoField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_pequeno"
         android:layout_marginEnd="@dimen/margin_medio"
-        android:hint="@string/fecha"
-        app:layout_constraintBottom_toBottomOf="@+id/TelefonoField"
+        android:hint="@string/Lanzamiento"
+        app:layout_constraintBottom_toBottomOf="@+id/GeneroField"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/TelefonoField"
-        app:layout_constraintTop_toBottomOf="@+id/apellidoField">
+        app:layout_constraintStart_toEndOf="@+id/GeneroField"
+        app:layout_constraintTop_toBottomOf="@+id/DesarrolladorField">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/dateEditText"
@@ -92,70 +92,66 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/generoLabel"
+        android:id="@+id/EstadoLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_medio"
-        android:layout_marginTop="@dimen/margin_pequeno"
-        android:text="@string/genero"
+        android:text="@string/Estado"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TelefonoField" />
+        app:layout_constraintTop_toBottomOf="@+id/GeneroField" />
 
     <RadioGroup
-        android:id="@+id/generoGroup"
+        android:id="@+id/estadoGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintStart_toEndOf="@+id/generoLabel"
-        app:layout_constraintTop_toBottomOf="@+id/generoLabel">
+        app:layout_constraintStart_toEndOf="@+id/EstadoLabel"
+        app:layout_constraintTop_toTopOf="@+id/EstadoLabel">
 
         <RadioButton
-            android:id="@+id/radio_m"
+            android:id="@+id/radio_SinEmpezar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/masculino" />
+            android:text="@string/SinEmpezar" />
 
         <RadioButton
-            android:id="@+id/radio_f"
+            android:id="@+id/radio_Jugando"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/femenino" />
+            android:text="@string/Jugando" />
 
         <RadioButton
-            android:id="@+id/radio_otro"
+            android:id="@+id/radio_Completado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/otro" />
+            android:text="@string/Completado" />
+
     </RadioGroup>
 
     <CheckBox
-        android:id="@+id/aceptaCheckBox"
+        android:id="@+id/onlineCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/terminos_checkbox"
-        android:layout_marginStart="@dimen/margin_medio"
-        app:layout_constraintStart_toEndOf="@+id/generoGroup"
-        app:layout_constraintTop_toTopOf="@+id/generoGroup"
-        app:layout_constraintBottom_toBottomOf="@+id/generoGroup" />
+        android:text="@string/online_checkbox"
+        app:layout_constraintStart_toEndOf="@+id/estadoGroup"
+        app:layout_constraintTop_toTopOf="@+id/estadoGroup" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/comentariosField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/comentarios"
         android:layout_marginStart="@dimen/margin_medio"
         android:layout_marginEnd="@dimen/margin_medio"
-        app:layout_constraintStart_toStartOf="parent"
+        android:hint="@string/comentarios"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/generoGroup"
-        android:layout_marginTop="@dimen/margin_pequeno"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/onlineCheckBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
-            android:minLines="3"/>
+            android:minLines="3" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -164,8 +160,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/siguiente"
-        app:layout_constraintEnd_toEndOf="@+id/comentariosField"
-        app:layout_constraintTop_toTopOf="@+id/aceptaCheckBox" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/anteriorButton" />
 
     <Button
         android:id="@+id/anteriorButton"
@@ -174,8 +170,18 @@
         android:layout_height="wrap_content"
         android:text="@string/anterior"
         app:layout_constraintEnd_toStartOf="@+id/siguienteButton"
-        app:layout_constraintStart_toEndOf="@+id/aceptaCheckBox"
-        app:layout_constraintTop_toTopOf="@+id/aceptaCheckBox" />
+        app:layout_constraintStart_toEndOf="@+id/onlineCheckBox"
+        app:layout_constraintTop_toTopOf="@+id/onlineCheckBox" />
+
+    <TextView
+        android:id="@+id/fichaNumericaLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ficha"
+        android:layout_marginTop="@dimen/margin_pequeno"
+        app:layout_constraintEnd_toStartOf="@+id/siguienteButton"
+        app:layout_constraintStart_toEndOf="@+id/anteriorButton"
+        app:layout_constraintTop_toTopOf="@+id/anteriorButton" />
 
     <Button
         android:id="@+id/limpiarButton"
@@ -183,9 +189,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/limpiar"
-        android:layout_marginStart="@dimen/margin_medio"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/borrarButton" />
+        android:layout_marginStart="@dimen/margin_grande"
+        app:layout_constraintStart_toEndOf="@+id/borrarButton"
+        app:layout_constraintTop_toTopOf="@+id/borrarButton" />
 
     <Button
         android:id="@+id/actualizarButton"
@@ -193,9 +199,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/actualizar"
-        android:layout_marginEnd="@dimen/margin_medio"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guardarButton" />
+        android:layout_marginEnd="@dimen/margin_grande"
+        app:layout_constraintEnd_toStartOf="@+id/guardarButton"
+        app:layout_constraintTop_toTopOf="@+id/guardarButton" />
 
     <Button
         android:id="@+id/borrarButton"
@@ -203,9 +209,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/borrar"
-        android:layout_marginStart="@dimen/margin_medio"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/comentariosField" />
 
     <Button
         android:id="@+id/guardarButton"
@@ -213,9 +218,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/guardar"
-        android:layout_marginEnd="@dimen/margin_medio"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/comentariosField" />
 
 
 

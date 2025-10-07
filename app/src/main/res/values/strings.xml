@@ -1,20 +1,22 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="nuevo_usuario">Agregar Nuevo Usuario</string>
-    <string name="nombre_usuario">Nombre</string>
-    <string name="apellido">Apellido</string>
-    <string name="telefono">Telefono</string>
-    <string name="fecha">fecha\n</string>
-    <string name="genero">Genero</string>
-    <string name="masculino">M</string>
-    <string name="femenino">F</string>
-    <string name="otro">Otro</string>
+    <string name="nuevo_juego">Agregar Nuevo Videojuego</string>
+    <string name="nombre_videojuego">Título</string>
+    <string name="Desarrollador">Desarrollador</string>
+    <string name="Genero">Género</string>
+    <string name="Lanzamiento">Año de salida</string>
+    <string name="Estado">Estado</string>
+    <string name="SinEmpezar">Sin empezar</string>
+    <string name="Jugando">Jugando</string>
+    <string name="Completado">Completado</string>
     <string name="comentarios">Comentarios</string>
     <string name="siguiente">Siguiente</string>
     <string name="anterior">Anterior</string>
-    <string name="terminos_checkbox">Mayor de edad</string>
+    <string name="online_checkbox">Modo Online</string>
     <string name="guardar">Guardar</string>
     <string name="borrar">Borrar</string>
     <string name="actualizar">Actualizar</string>
     <string name="limpiar">Limpiar</string>
+    <string name="raido4">cambiar</string>
+    <string name="ficha">0</string>
 </resources>
