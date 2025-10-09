@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.domain.modelo.Videojuego
 import com.example.myapplication.domain.usecases.videojuegos.addVideojuegoUseCase
 
-class MainViewModel {
+class MainViewModel: ViewModel() {
     private var _state: MutableLiveData<MainState> = MutableLiveData(MainState())
     val state: LiveData<MainState> get() = _state
 
@@ -28,11 +28,7 @@ class MainViewModel {
 
 
 
-class MainViewModelFactory(
-
-
-
-) : ViewModelProvider.Factory {
+class MainViewModelFactory() : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
