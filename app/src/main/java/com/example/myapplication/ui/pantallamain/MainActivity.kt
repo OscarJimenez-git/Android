@@ -1,6 +1,7 @@
 package com.example.myapplication.ui.pantallamain
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityMainBinding
+import com.example.myapplication.domain.modelo.Videojuego
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,8 +32,32 @@ class MainActivity : AppCompatActivity() {
         }
 
         eventos()
+        observacion()
+    }
+    private fun observacion(){
+        viewModel.state.observe(this){state ->
+            binding.tituloEditText?.setText(state.videojuego.titulo)
+            binding.desarrolladorEditText?.setText(state.videojuego.desarrollador)
+            binding.generoEditText?.setText(state.videojuego.genero)
+
+            state.mensaje?.let { error ->
+                Toast.makeText(this, error, Toast.LENGTH_LONG).show()
+                viewModel.limpiarMensaje()
+            }
+
+        }
     }
     private fun eventos(){
-        binding.guardarButton.setOnClickListener {  }
+        binding.guardarButton.setOnClickListener {
+            var videojuego= Videojuego(
+                binding.tituloEditText?.text.toString(),
+                binding.desarrolladorEditText?.text.toString(),
+                binding.generoEditText?.text.toString()
+
+            )
+            viewModel.ClickBotonGuardar(videojuego)
+        }
+
     }
 }
+

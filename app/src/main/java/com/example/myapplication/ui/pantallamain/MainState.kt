@@ -1,7 +1,8 @@
 package com.example.myapplication.ui.pantallamain
 
-import com.example.myapplication.domain.modelo.Usuario
+import com.example.myapplication.domain.modelo.Videojuego
 
 data class MainState (
-    val cancion: Usuario =Usuario()
+    val videojuego: Videojuego =Videojuego(),
+    val mensaje :String?="",
 )
