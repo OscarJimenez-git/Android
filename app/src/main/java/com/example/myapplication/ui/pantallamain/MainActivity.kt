@@ -57,6 +57,12 @@ class MainActivity : AppCompatActivity() {
             )
             viewModel.ClickBotonGuardar(videojuego)
         }
+        binding.siguienteButton.setOnClickListener {
+            viewModel.siguienteVideojuego()
+        }
+        binding.anteriorButton.setOnClickListener {
+            viewModel.anteriorVideojuego()
+        }
 
     }
 }
