@@ -18,4 +18,13 @@ object RepositorioVideojuegos {
     fun getVideojuego(id:Int) = videojuegos[id]
 
     fun addVideojuego(videojuego: Videojuego) = videojuegos.add(videojuego)
+
+    fun removeJuego(index: Int): Boolean {
+         if (index in videojuegos.indices) {
+            videojuegos.removeAt(index)
+            return true
+        } else {
+            return false
+        }
+    }
 }

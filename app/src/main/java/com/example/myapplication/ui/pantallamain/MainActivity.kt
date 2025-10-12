@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
             binding.desarrolladorEditText?.setText(state.videojuego.desarrollador)
             binding.generoEditText?.setText(state.videojuego.genero)
 
+
             state.mensaje?.let { error ->
                 Toast.makeText(this, error, Toast.LENGTH_LONG).show()
                 viewModel.limpiarMensaje()
@@ -63,7 +64,9 @@ class MainActivity : AppCompatActivity() {
         binding.anteriorButton.setOnClickListener {
             viewModel.anteriorVideojuego()
         }
+        binding.borrarButton.setOnClickListener {
+            viewModel.borrarVideojuego()
+        }
 
     }
 }
-

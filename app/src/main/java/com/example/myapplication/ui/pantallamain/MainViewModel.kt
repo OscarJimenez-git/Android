@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.myapplication.domain.data.RepositorioVideojuegos
 import com.example.myapplication.domain.modelo.Videojuego
 import com.example.myapplication.domain.usecases.videojuegos.AddVideojuegoUseCase
+import com.example.myapplication.domain.usecases.videojuegos.DeleteVideojuegoUseCase
 import com.example.myapplication.domain.usecases.videojuegos.SiguienteVideojuegoUseCase
 
 class MainViewModel : ViewModel() {
@@ -53,6 +54,37 @@ class MainViewModel : ViewModel() {
             _state.value = _state.value?.copy(videojuego = videojuego, indiceVideojuego = nuevoIndice)
         }
 
+    }
+
+    fun borrarVideojuego() {
+        val indice = _state.value?.indiceVideojuego ?: -1
+
+        val eliminado = DeleteVideojuegoUseCase().invoke(indice)
+        if (eliminado) {
+            val nuevoTotal = RepositorioVideojuegos.size()
+            if (nuevoTotal == 0) {
+
+                _state.value = _state.value?.copy(
+                    mensaje = "Videojuego eliminado",
+                    numVideojuegos = nuevoTotal,
+                    indiceVideojuego = -1,
+                    videojuego = Videojuego()
+                )
+            } else {
+
+                var nuevoIndice = indice
+                if (nuevoIndice >= nuevoTotal) {
+                    nuevoIndice = 0
+                }
+                val vj = SiguienteVideojuegoUseCase().invoke(nuevoIndice)
+                _state.value = _state.value?.copy(
+                    mensaje = "Videojuego eliminado",
+                    numVideojuegos = nuevoTotal,
+                    indiceVideojuego = nuevoIndice,
+                    videojuego = vj
+                )
+            }
+        }
     }
 
     fun limpiarMensaje() {
