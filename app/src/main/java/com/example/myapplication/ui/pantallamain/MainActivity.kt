@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.R
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.domain.modelo.Videojuego
+import com.example.myapplication.domain.data.RadioOpcion
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,6 +41,17 @@ class MainActivity : AppCompatActivity() {
             binding.desarrolladorEditText?.setText(state.videojuego.desarrollador)
             binding.generoEditText?.setText(state.videojuego.genero)
 
+            val idRadio = when (state.videojuego.opcionRadio) {
+                RadioOpcion.OPCION1 -> R.id.radio_SinEmpezar
+                RadioOpcion.OPCION2 -> R.id.radio_Jugando
+                RadioOpcion.OPCION3 -> R.id.radio_Completado
+            }
+            binding.estadoGroup.check(idRadio)
+
+            binding.onlineCheckBox.isChecked = state.videojuego.marcado
+
+            binding.comentariosEditText?.setText(state.videojuego.comentarios)
+
 
             state.mensaje?.let { error ->
                 Toast.makeText(this, error, Toast.LENGTH_LONG).show()
@@ -49,11 +61,25 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun eventos(){
+
+
         binding.guardarButton.setOnClickListener {
-            var videojuego= Videojuego(
-                binding.tituloEditText?.text.toString(),
-                binding.desarrolladorEditText?.text.toString(),
-                binding.generoEditText?.text.toString()
+            // obtener opcion seleccionada del RadioGroup
+            val opcionSeleccionada = when (binding.estadoGroup.checkedRadioButtonId) {
+                R.id.radio_SinEmpezar -> RadioOpcion.OPCION1
+                R.id.radio_Jugando -> RadioOpcion.OPCION2
+                R.id.radio_Completado -> RadioOpcion.OPCION3
+                else -> RadioOpcion.OPCION1
+            }
+
+
+            val videojuego= Videojuego(
+                titulo = binding.tituloEditText?.text.toString(),
+                desarrollador = binding.desarrolladorEditText?.text.toString(),
+                genero = binding.generoEditText?.text.toString(),
+                opcionRadio = opcionSeleccionada,
+                marcado = binding.onlineCheckBox.isChecked,
+                comentarios = binding.comentariosEditText?.text.toString()
 
             )
             viewModel.ClickBotonGuardar(videojuego)
@@ -66,6 +92,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.borrarButton.setOnClickListener {
             viewModel.borrarVideojuego()
+        }
+        binding.limpiarButton.setOnClickListener {
+            viewModel.limpiarCampos()
         }
 
     }

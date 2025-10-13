@@ -21,7 +21,10 @@ class MainViewModel : ViewModel() {
         val addVideojuegoUseCase = AddVideojuegoUseCase()
         if (addVideojuegoUseCase.invoke(videojuego)) {
             _state.value =
-                _state.value?.copy(mensaje = "Videojuego añadido", videojuego = videojuego)
+                _state.value?.copy(
+                    mensaje = "Videojuego añadido",
+                    videojuego = videojuego
+                )
         } else {
             _state.value = _state.value?.copy(mensaje = "ERROR AL AÑADIR")
         }
@@ -37,7 +40,10 @@ class MainViewModel : ViewModel() {
                 nuevoIndice = 0
             }
             val videojuego = SiguienteVideojuegoUseCase().invoke(nuevoIndice)
-            _state.value = _state.value?.copy(videojuego = videojuego, indiceVideojuego = nuevoIndice)
+            _state.value = _state.value?.copy(
+                videojuego = videojuego,
+                indiceVideojuego = nuevoIndice
+            )
         }
     }
 
@@ -51,7 +57,10 @@ class MainViewModel : ViewModel() {
                 nuevoIndice = total - 1
             }
             val videojuego = SiguienteVideojuegoUseCase().invoke(nuevoIndice)
-            _state.value = _state.value?.copy(videojuego = videojuego, indiceVideojuego = nuevoIndice)
+            _state.value = _state.value?.copy(
+                videojuego = videojuego,
+                indiceVideojuego = nuevoIndice
+            )
         }
 
     }
@@ -89,6 +98,14 @@ class MainViewModel : ViewModel() {
 
     fun limpiarMensaje() {
         _state.value = _state.value?.copy(mensaje = null)
+    }
+
+    fun limpiarCampos() {
+        _state.value = _state.value?.copy(
+            videojuego = Videojuego(),
+            indiceVideojuego = -1,
+            mensaje = null
+        )
     }
 }
 
