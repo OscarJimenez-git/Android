@@ -20,13 +20,10 @@ class MainViewModel : ViewModel() {
     fun ClickBotonGuardar(videojuego: Videojuego) {
         val addVideojuegoUseCase = AddVideojuegoUseCase()
         if (addVideojuegoUseCase.invoke(videojuego)) {
-            _state.value =
-                _state.value?.copy(
+            _state.value = _state.value?.copy(
                     mensaje = "Videojuego añadido",
                     videojuego = videojuego
                 )
-        } else {
-            _state.value = _state.value?.copy(mensaje = "ERROR AL AÑADIR")
         }
     }
 
