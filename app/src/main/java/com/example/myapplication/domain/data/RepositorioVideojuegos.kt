@@ -17,6 +17,7 @@ object RepositorioVideojuegos {
     val numVideojuegos: Int
         get() = videojuegos.size
     fun getVideojuego(id:Int) = videojuegos[id]
+    fun getVideojuegos(): List<Videojuego> = videojuegos.toList()
 
     fun addVideojuego(videojuego: Videojuego) = videojuegos.add(videojuego)
 
